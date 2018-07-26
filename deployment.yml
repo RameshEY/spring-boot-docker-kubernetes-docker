@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbservice
+  labels:
+    app: dbservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dbservice
+  template:
+    metadata:
+      labels:
+        app: dbservice
+    spec:
+      containers:
+      - name: dbservice
+        image: aritranag20/dbservice
+        ports:
+        - containerPort: 8000

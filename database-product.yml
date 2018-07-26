@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: databaseproductservice
+  labels:
+    app: databaseproductservice
+spec:
+  containers:
+  - name: k8s-demo
+    image: aritranag20/database-product-service
+    ports:
+    - name: dbproduct-port
+      containerPort: 8000
